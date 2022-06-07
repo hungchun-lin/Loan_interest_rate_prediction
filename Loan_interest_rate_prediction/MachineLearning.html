@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Loan data from Lending Club (ML)</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="MachineLearning.css" title="style" />
+  <script type="text/javascript"
+	        src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript"
+			src="MachineLearning.js"></script>
+  
+ 
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <h1><a href="index.html">Loan data from Lending Club<span class="logo_color"> </br> - Interest Rate Prediction</span></a></h1>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+				
+          <li><a href="index.html">Overview</a></li>
+          <li><a href="EDA.html">Exploratory Data Analysis</a></li>
+          <li class="selected"><a href="MachineLearning.html">Machine Learning</a></li>
+         
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+        <h3>Designer</h3>
+        <h4>HungChun Lin</h4>
+		<h5>Data Scientist
+		</br>Columbian College of Arts and Sciences</br>George Washington University</h5>
+        <h5><a href="hungchun_lin@gwu.edu">hungchun_lin@gwu.edu</a></h5>
+        <p>This website is for showing the result of the project of Loan Data<br /></p>
+		
+        <h3>Resourse Links</h3>
+        <ul>
+          <li><a href="https://www.lendingclub.com/investing/peer-to-peer">LendingClub</a></li>
+          <li><a href="https://www.openintro.org/data/index.php">Open Intro Datasets</a></li>
+		      <li><a href="https://www.openintro.org/data/index.php?data=loans_full_schema">Loan Data</a></li>
+          <li><a href="https://www.plot.ly/">Plotly</a></li>
+        </ul>
+      </div>
+
+
+
+    <div id="content">
+        <h1>Compete Machine Learning Training Process</h1>
+		<div class="ml_image">
+			<div style="width:600px; height:250px;">
+				<img src="./imgs/ml_process.jpg" alt="">
+			</div>
+			<h6>Image link: <a href="https://www.google.com/search?client=safari&rls=en&q=ml+process&ie=UTF-8&oe=UTF-8">CENTRIC</a></h6>
+	 
+		</div>
+        <p>The standard process of a model traning has listed in above image, and in this project, I will follow the process to build up the model for predicting the interest rate.</p>
+	</br>		</br>
+
+
+		<div class="eda_image">
+			<h3>1. Check the data features and missing status</h3>
+
+			<p>
+				First step, we can first take a look into the data structures, and observe the data types in each columns.	
+			</p>
+			<p>
+				After doing EDA, we need to take a look into the data missing status.</p>
+
+				<div class="ml_process_image">
+					<div style="width:300px; height:350px;">
+						<img src="./imgs/data_missing.png" alt="">
+					</div>
+				</div>
+			<p>The features in the table are the features who include missing value. And we will drop the features who include more then 50% missing value.</p>
+			<p>For the "emp_title" and "emp_length", we will also drop them, as our observation, in the "emp_title" column, it includes too many titles and it would not be that valuable for us to keep it as our feature, and from our perspevtive, the "emp_length" is also not that meaningful in this dataset.</p>
+			<p>For "those two numerical columns "months_since_last_credit_inquiry" and "num_accounts_120d_past_due", we will use the mean of those columns to input the missing value.</p>
+			<p>For "debt_to_income", it is not reasonable for us to just input the mean, since this value may be highly correlation with other features, and also the missing values are not that many, so we decided to just drop the missing values.</p>
+			</div>
+			</br>
+			<h4>Correlation plot</h4>
+			<div class="ml_corr_image">
+				<div style="width:300px; height:700px;">
+					<img src="./imgs/corr_plot.png" alt="">
+				</div>
+			</div>
+			<p>Create a correplation to observe the correlation between each features.</p>
+		</br>
+
+		<h3>2. Data Preparation</h3>
+		<h4>a. Feature Encoding for categorical data</h4>
+		<p>We need to do feature encoding for the categorical data, in this project I used the "One-hot encoding" technique to process the data, since I don't want the data has the ordinal effect.</p>
+
+		<h4>b. Select the features and target value</h4>
+		<p>In this project, since we are predicting the interst rate, so we will set the interest rate as our target value, and the rest of the columns as our features.</p>
+
+		<h4>c. Split the data into Train and Test</h4>
+		<p>In this step, we will split our dataset into training and testing dataset, and here I will split the data as 8:2.</p>
+		
+		</br>
+
+		<h3>3. Build the models and train</h3>
+		<p>Since our target data is continuous data, I will select some regression model as our models to predict the interest rate.</p>
+
+		<h4>A. Linear Regression</h4>
+		<h5>For selecting the regression model, I will always select Linear Regression as our baseline model to start the modeling process.</h5>
+		<div class="model_result_image">
+			<div style="width:300px; height:150px;">
+				<img src="./imgs/lm_result.png" alt="">
+			</div>
+		</div>
+		<p>From the evaluation scores, we can see the linear regression is a great model to predict the interest rate, since it has a very high R square value and pretty low MAE.</p>
+		<div class="model_result_image">
+			<div style="width:300px; height:350px;">
+				<img src="./imgs/lm_result_2.png" alt="">
+			</div>
+		</div>
+
+		<!--- <p>From the evaluation scores, we can see the linear regression is a great model to predict the interest rate, since it has a very high R square value and pretty low MAE.</p>
+		--->
+
+
+		<h4>B. XGBoost Regression</h4>
+		<h5>As we all know that XGBoost performs pretty well in lots of Kaggle competetion, so I would like to also build up a XGB regression model.</h5>
+		<div class="model_result_image">
+			<div style="width:300px; height:150px;">
+				<img src="./imgs/xgb_result.png" alt="">
+			</div>
+		</div>
+		<p>From the evaluation scores, we can see the XGB also performs well in this case, but still can not beat our baseline model based on the R square value.</p>
+		<div class="model_result_image">
+			<div style="width:300px; height:350px;">
+				<img src="./imgs/xgb_result_2.png" alt="">
+			</div>
+		</div>
+
+		<!--- <p>From the evaluation scores, we can see the linear regression is a great model to predict the interest rate, since it has a very high R square value and pretty low MAE.</p>
+		--->
+
+		<h3>Conclusion</h3>
+		<p>In this project, we can get pretty well result form both models, I think the features we used are all good predictor variables.</p>
+		<p>Both models can be utilized to predict the interest rate for future applicatnts.</p>
+			
+		<h3>Future Improvememt</h3>
+		<p>In current model building process, I simply imput all processed features into the model, but in the future, if I have more time, I would like to do further Feature Engineering to process the features, decrease the number of features, and produce some useful features based on the current features. It might help us to train the model more quickly and easily.</p>
+	
+	
+	</div>
+
+		
+		
+	<br /><br /><br />
+	
+	
+    </div><!-- content --> 
+	</div><!--site - content-->
+	  
+    <div id="content_footer"></div>
+    <div id="footer">
+      Copyright &copy; <script>var d = new Date(); document.write(d.getFullYear());</script>
+    </div>
+	
+	</div> <!-- main -->
+</body>
+</html>
