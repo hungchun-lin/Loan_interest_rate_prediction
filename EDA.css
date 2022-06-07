@@ -1,0 +1,301 @@
+html {
+	height: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: normal 0.78em arial, sans-serif;
+	background: #fff;
+	color: #555;
+}
+
+p {
+	padding: 0 0 16px 0;
+	line-height: 1.7em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font: normal 175% 'century gothic', arial, sans-serif;
+	color: #111;
+	margin: 0 0 15px 0;
+	padding: 15px 0 5px 0;
+}
+
+h2 {
+	color: #444;
+}
+
+h4, h5, h6 {
+	margin: 0;
+	padding: 0 0 5px 0;
+	font: normal 120% arial, sans-serif;
+	color: #555;
+}
+
+h5, h6 {
+	font: italic 95% arial, sans-serif;
+	padding: 0 0 15px 0;
+	color: #000;
+}
+
+h6 {
+	color: #888;
+}
+
+a, a:hover {
+	outline: none;
+	color: #111;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul {
+	margin: 2px 0 22px 17px;
+}
+
+ul li {
+	list-style-type: circle;
+	margin: 0 0 6px 0;
+	padding: 0 0 4px 5px;
+}
+
+
+#main, #header, #logo, #menubar, #site_content, #footer {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#main {
+	width: 910px;
+}
+
+#header {
+	width: 890px;
+}
+
+#logo {
+	width: 890px;
+	position: relative;
+	height: 230px;
+	background: url(./imgs/interest_rate.jpg) no-repeat;
+	background-size: 45%;
+	opacity: 0.6;
+	background-position: 100% 80%;
+}
+
+#logo_text {
+	position: absolute;
+	top: 0px;
+	left: 30px;
+}
+
+#logo h1, #logo h2 {
+	font: normal 300% 'century gothic', arial, sans-serif;
+	border-bottom: 0;
+	color: white;
+	text-transform: none;
+	margin: 0;
+}
+
+#logo_text h1, #logo_text h1 a, #logo_text h1 a:hover {
+	padding: 10px 0 0 0;
+	color: black;
+	letter-spacing: 0.1em;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.logo_color {
+	color: #555;
+}
+
+#logo_text h2 {
+	font-size: 130%;
+	padding: 0;
+	color: #444;
+}
+
+#menubar {
+	width: 890px;
+	height: 35px;
+	padding: 8px 0 0 0;
+	margin: -45px 0 0 0;
+	position: relative;
+	z-index: 1;
+	float: right;
+}
+
+ul#menu {
+	float: right;
+	margin: 0;
+}
+
+ul#menu li {
+	float: left;
+	margin: 5px 0 0 0;
+	padding: 0 0 0 6px;
+	list-style: none;
+}
+
+ul#menu li a {
+	letter-spacing: 0em;
+	font: normal 105% arial, sans-serif;
+	text-transform: uppercase;
+	display: block;
+	float: left;
+	height: 20px;
+	text-decoration: none;
+	padding: 9px 22px 5px 16px;
+	text-align: center;
+	color: #555;
+	border: 0;
+}
+
+ul#menu li.selected a {
+	height: 25px;
+	color: #111;
+	padding: 7px 22px 5px 16px;
+	
+}
+
+ul#menu li.selected {
+	margin: 7px 0 0 0;
+	background: #f8f8f8;
+}
+
+ul#menu li a:hover {
+	color: #888;
+	text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+}
+
+#site_content {
+	width: 890px;
+	overflow: hidden;
+	background: #f8f8f8;
+}
+
+#site_content h3 {
+	font-weight: bold;
+}
+
+.sidebar {
+	float: right;
+	width: 198px;
+	padding: 20px 25px 15px 15px;
+}
+
+.sidebar ul {
+	width: 178px;
+	padding: 4px 0 0 0;
+	margin: 4px 0 30px 0;
+}
+
+.sidebar li {
+	list-style: none;
+	padding: 0 0 7px 0;
+}
+
+.sidebar li a, .sidebar li a:hover {
+	position: relative;
+	background: url(link-01.png) no-repeat left center;
+	background-size: 5%;
+	padding: 0 0 0 40px;
+	display: block;
+	
+}
+
+#content p {
+	letter-spacing: 0em;
+	font: normal 120% arial, sans-serif;
+	padding: 5px 0 0 0;
+	text-indent: 30px;
+	line-height: 1.5;
+}
+
+
+#content {
+	text-align: left;
+	width: 600px;
+	float: left;
+	padding: 20px 0 15px 30px;
+}
+
+#content h1 {
+	font-weight:bold;
+}
+
+#footer {
+	width: 890px;
+	height: 33px;
+	padding: 20px 0 4px 0;
+	text-align: center;
+	background: #555;
+	color: #aaa;
+	border-top: 1px solid #fff;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	font-size: 80%;
+}
+
+#footer a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#footer a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+
+#content .graph .description_graph {
+	position: relative;
+	padding: 10px 0 0 35px;
+	letter-spacing: 0em;
+	font: normal 120% arial, sans-serif;
+	font-weight:bold;
+	line-height: 2;
+	color: black;
+	background: url(Ed.png) no-repeat left bottom;
+	background-size: 5%;
+	
+}
+
+img {
+    padding:2px;
+    border:0px;
+}
+
+#content .graph .ead_image img {
+	font: normal 100% 'century gothic', arial, sans-serif;
+	padding: 2%;
+
+}
+
+
+
+#content .graph p {
+	font: normal 100% 'century gothic', arial, sans-serif;
+	color: '#708090';
+	line-height: 1.5;
+	text-indent: 0px;
+}
+
+.country_color {
+	color: darkblue;
+	font-style: oblique;
+	font-weight:bold;
+}
+
+.highlight {
+	color: red;
+	font-style: oblique;
+	font-weight:bold;
+}

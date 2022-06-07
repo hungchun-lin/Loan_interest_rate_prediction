@@ -1,0 +1,120 @@
+<html>
+
+<head>
+	<title>Loan data from Lending Club (EDA)</title>
+	<meta name="description" content="website description" />
+	<meta name="keywords" content="website keywords, website keywords" />
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+	<link rel="stylesheet" type="text/css" href="EDA.css" title="style" />
+</head>
+
+<body>
+	<div id="main">
+		<div id="header">
+			<div id="logo">
+				<div id="logo_text"><h1><a href="index.html">Loan data from Lending Club<span class="logo_color"> </br> - Interest Rate Prediction</span></a></h1>
+				</div>
+			</div>
+			<div id="menubar">
+				<ul id="menu">
+					<li><a href="index.html">Overview</a></li>
+					<li class="selected"><a href="EDA.html">Exploratory Data Analysis</a></li>
+					<li><a href="MachineLearning.html">MachineLearning</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="site_content">
+			<div class="sidebar">
+				<h3>Designer</h3>
+				<h4>HungChun Lin</h4>
+				<h5>Data Scientist
+				</br>Columbian College of Arts and Sciences</br>George Washington University</h5>
+				<h5><a href="hungchun_lin@gwu.edu">hungchun_lin@gwu.edu</a></h5>
+				<p>This website is for showing the result of the project of Loan Data<br /></p>
+				
+				<h3>Resourse Links</h3>
+				<ul>
+				  <li><a href="https://www.lendingclub.com/investing/peer-to-peer">LendingClub</a></li>
+				  <li><a href="https://www.openintro.org/data/index.php">Open Intro Datasets</a></li>
+					  <li><a href="https://www.openintro.org/data/index.php?data=loans_full_schema">Loan Data</a></li>
+				  <li><a href="https://www.plot.ly/">Plotly</a></li>
+				</ul>
+			  </div>
+			<div id="content">
+				<h1>Exploratory Data Analysis</h1>
+				<p>In this page, we will show some data visulization to explore the interesting key insights in this dataset.</p>
+
+				<h1>Approach description</h1>
+				<p>For all the visulizations, I utilized the Python language with the famous vislulization packages, "MatPlotlib" and "Searborn" to achieve our goals.</p>
+				</br>
+				<br /><br /><br />
+
+				<!--EDA image-->
+				<div class="graph">
+
+					<div class="eda_image">
+						<h3>Home Ownership vs Interest Rate</h3>
+						<div style="width:600px; height:300px;">
+							<img src="./imgs/fig_1.png" alt="">
+						</div>
+						<p>
+							From this plot, we can see that "Mortgage" is the most home ownership type and with the lowest interest rate; On the other hand, the rent is the less home ownership type but with the highest interest rate.
+						</p>
+					</div>
+
+					<div class="eda_image">
+						<h3>Loan purpose count</h3>
+						<div style="width:600px; height:350px;">
+							<img src="./imgs/fig_2.png" alt="">
+						</div>
+						<p>
+							From the barchart, we can observe that the "debt consolidation" is the reason the most loan applications will apply the loan for, and the second one is the loan for "credit card", but it still even don't hit the half of the first place. 
+						</p>
+					</div>
+
+					<div class="eda_image">
+						<h3>Loan amount vs Loan status</h3>
+						<div style="width:600px; height:400px;">
+							<img src="./imgs/fig_3.png" alt="">
+						</div>
+						<p>
+							From the box plot, we can see that "Fully paid" status has the low medium loan amount overall; on the other hand, we can observe that the status "Late (31 - 120 days)" and "In Grace Period" have relatively higher loan amount, even include the higher minimum.
+							There is another thing we can detect on this plot, we can assume that the higest loan from this company is 40000, since we can observe that the maximum amount for all categories are the same at $40,000.
+						</p>
+					</div>
+
+					<div class="eda_image">
+						<h3>Interest Rate vs Grade</h3>
+						<div style="width:600px; height:400px;">
+							<img src="./imgs/fig_4.png" alt="">
+						</div>
+						<p>
+							From this plot, it's pretty obvious that the interest rate has high correlation with the grade, from this plot, we assume that the grad has a ordinal relationship between the grades, so we can assume that grade A is the customers who have been classified as the greatest applicants, so that they can enjoy the lowest interest rate, on the contrast, we can assume that the grad F is the applicants who nave the worst records/histories so that they should afford the highest interest rate. 
+						</p>
+					</div>
+
+					<div class="eda_image">
+						<h3>Histogram of the Loan Amount</h3>
+						<div style="width:600px; height:400px;">
+							<img src="./imgs/fig_5.png" alt="">
+						</div>
+						<p>
+							From the histogram, we can find that the most loan amount is located between $8800 and $12700.
+						</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<div id="content_footer"></div>
+		<div id="footer">
+			Copyright &copy;
+			<script>var d = new Date(); document.write(d.getFullYear());</script>
+		</div>
+	</div> <!-- main -->
+
+</body>
+
+</html>
